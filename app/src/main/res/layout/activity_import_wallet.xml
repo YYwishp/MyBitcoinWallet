@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gyx.mybitcoinwallet.import_wallet.ImportWalletActivity">
+
+    <EditText
+        android:id="@+id/ed_mnemonic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入助记词"
+        android:text="" />
+
+    <Button
+        android:id="@+id/bt_scan_mnemonic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫描助记词" />
+
+    <Button
+        android:id="@+id/bt_import_mnemonic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="导入助记词" />
+
+    <TextView
+        android:id="@+id/tv_import_state_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="导入情况：" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent" />
+
+    <EditText
+        android:id="@+id/ed_privatekey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入私钥"
+        android:text="" />
+
+    <Button
+        android:id="@+id/bt_scan_privatekey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫描私钥" />
+
+    <Button
+        android:id="@+id/bt_import_privatekey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="导入私钥" />
+
+    <TextView
+        android:id="@+id/tv_import_state_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="导入情况：" />
+</LinearLayout>

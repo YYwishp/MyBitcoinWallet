@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gyx.mybitcoinwallet.transaction.TransactionActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textColor="#f00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注意：\n 导入私钥格式区分，\n 1:首先确认是测试网络，还是正式网络，\n 2:是隔离验证私钥，还是一般情况私钥，" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试网络下\n私钥一般特征：c开头\n 一般地址特征：m or n开头\n隔离地址特征：tc1q开头（BIP44）"
+            android:textColor="#f8f" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正式网络下\n私钥一般特征：5, K or L开头\n 一般地址特征：1开头\n隔离地址特征：bc1q开头（BIP44）"
+            android:textColor="#09f" />
+
+
+        <EditText
+            android:id="@+id/ed_mnemonic_or_privatekey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入助记词或私钥（测试网络，一般私钥模式）"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bt_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描" />
+
+        <Button
+            android:id="@+id/bt_import"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="导入" />
+
+        <TextView
+            android:id="@+id/tv_import_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="导入情况：" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance："
+                android:textColor="#f0f"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1000BTC"
+                android:textColor="#333"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UnspendList:"
+            android:textColor="#098967"
+            android:textSize="20sp" />
+
+        <TextView
+            android:textColor="#f00"
+            android:id="@+id/tv_unspent_parse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            />
+
+
+        <TextView
+            android:textColor="#f00"
+            android:id="@+id/err_raw_tx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            />
+
+
+
+        <TextView
+            android:id="@+id/tv_unspend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="15dp"
+            />
+
+        <View
+            android:background="#f00"
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+
+        <TextView
+            android:id="@+id/err_recipient_address"
+            android:textColor="#f00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_scan_receive_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫描收币地址："
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/ed_receive_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/err_amount"
+            android:textColor="#f00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="转出数量："
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/tv_transaction_amount"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BTC"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="每byte花费多少中本聪："
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/ed_vbyte_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="矿工费："
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#999"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_sign_rawtransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"
+            android:text="交易签名/计算矿工费" />
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/tv_sign_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="签名信息"
+            android:textColor="#333" />
+
+
+        <TextView
+            android:layout_margin="10dp"
+            android:text="Copy Bitcoin transaction and open \n https://testnet.blockchain.info/pushtx \n to  Broadcast Transaction on testnet"
+            android:textColor="#f00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ScrollView>

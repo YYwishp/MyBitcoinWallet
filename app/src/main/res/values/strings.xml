@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">MyBitcoinWallet</string>
+
+
+    <string name="json_err_no_unspent_outputs">\"unspent_outputs\" array wasn\'t found</string>
+    <string name="error_unable_to_decode_json_transaction">Unable to decode this JSON.\n%s</string>
+
+
+    <string name="error_unable_to_decode_transaction">Unable to decode given transaction</string>
+
+
+
+
+    <string name="error_no_spendable_outputs_found">No spendable standard outputs for %s have found</string>
+
+
+    <string name="error_amount_parsing">Invalid amount</string>
+
+
+    <string name="error_not_enough_funds">Requested amount is bigger than available balance minus fee.</string>
+
+    <string name="generated_tx_have_too_big_fee">Generated transaction have suspiciously big fee. Please report to developer.</string>
+
+
+
+
+    <string name="fee_is_greater_than_available_balance">Fee is greater than available balance.</string>
+
+
+    <string name="output_address_same_as_input">Output address is same as input address - it\'s likely a mistake.</string>
+
+
+    <string name="error_failed_to_create_transaction">Error creating transaction - for some unknown reason generated transaction contained an error.</string>
+
+    <string name="error_unknown">Unknown error</string>
+
+
+
+    <string name="spend_bch_tx_description">Transaction below will transfer %1$s BCH from %2$s to %3$s. Transaction fee is %4$s BCH.</string>
+
+
+    <string name="spend_btc_tx_description">Transaction below will transfer %1$s BTC from %2$s to %3$s. Transaction fee is %4$s BTC.</string>
+
+
+    <string name="spend_bch_tx_with_change_description">Transaction below will transfer %1$s BCH from %2$s to %3$s. Transaction fee is %4$s BCH. Change of %5$s BCH will go to %2$s.</string>
+
+
+
+    <string name="spend_btc_tx_with_change_description">Transaction below will transfer %1$s BTC from %2$s to %3$s. Transaction fee is %4$s BTC. Change of %5$s BTC will go to %2$s.</string>
+
+
+
+
+
+
+
+</resources>
