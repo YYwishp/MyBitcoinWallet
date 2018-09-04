@@ -43,6 +43,7 @@ import org.bitcoinj.core.SegwitAddress;
 import org.bitcoinj.crypto.ChildNumber;
 import org.bitcoinj.crypto.DeterministicKey;
 import org.bitcoinj.crypto.HDKeyDerivation;
+import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.wallet.DeterministicSeed;
 import org.bitcoinj.wallet.UnreadableWalletException;
@@ -227,25 +228,26 @@ public class TransactionActivity extends BaseActivity implements View.OnClickLis
 
 
 	public void importFromPrivateKey(String privatekey) {
-//		MainNetParams params = MainNetParams.get();
+//		MainNetParams params = MainNetParams.get();// 正式网络
 		TestNet3Params params = TestNet3Params.get();//测试网络
 		ECKey key = DumpedPrivateKey.fromBase58(params, privatekey).getKey();
-//		BigInteger privKey = Base58.decodeToBigInteger(privatekey);
-//		ECKey key = ECKey.fromPrivate(privKey);
-//		SegwitAddress segwitAddress_1 = SegwitAddress.fromKey(params, key);
+		SegwitAddress segwitAddress_1 = SegwitAddress.fromKey(params, key);
 		LegacyAddress address = LegacyAddress.fromKey(params, key);
 		System.out.println("----私钥: " + privatekey);
 		System.out.println("----普通地址: " + address.toBase58());
-//		System.out.println("----隔离地址: " + segwitAddress_1.toString());
+		System.out.println("----隔离地址: " + segwitAddress_1.toString());
 		StringBuilder stringBuilder = new StringBuilder();
 		mAddress = address.toBase58();
 		mPrivateKey = privatekey;
 		stringBuilder
 				.append("私钥：" + privatekey + "\n")
-				.append("普通地址：" + mAddress + "\n");
-//				.append("隔离地址：" + segwitAddress_1.toString() + "\n")
-//				.append("隔离地址类型：" + segwitAddress_1.getOutputScriptType());
+				.append("普通地址：" + mAddress + "\n")
+				.append("隔离地址：" + segwitAddress_1.toString() + "\n")
+				.append("隔离地址类型：" + segwitAddress_1.getOutputScriptType());
 		tvImportState.setText(stringBuilder.toString());
+
+
+
 		RequestUtils.getInstance().getAddressBalance(address.toBase58(), new OnDownLoadListener<AddressBalanceBean>() {
 			@Override
 			public void onSuccess(AddressBalanceBean addressBalanceBean) {
