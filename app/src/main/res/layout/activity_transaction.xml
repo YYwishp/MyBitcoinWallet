@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试网络下\n私钥一般特征：c开头\n 一般地址特征：m or n开头\n隔离地址特征：tc1q开头（BIP44）"
+            android:text="测试网络下\n私钥一般特征：c开头\n 一般地址特征：m or n开头\n隔离地址特征：tb1q开头（BIP44）"
             android:textColor="#f8f" />
 
         <TextView
